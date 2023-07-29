@@ -193,6 +193,8 @@ function init_repo() {
     rm -rf "$REPO"
     mkdir -p "$REPO"
     git -C "$REPO" init -q -b "$MAIN_BRANCH"
+    git -C "$REPO" config user.email "git-sync-test@example.com"
+    git -C "$REPO" config user.name "git-sync-test"
     touch "$REPO/file"
     git -C "$REPO" add file
     git -C "$REPO" commit -aqm "init file"
